@@ -1,0 +1,27 @@
+services:
+  app:
+    build: .
+    restart: always
+    container_name: container-aula-docker-turma15
+    env_file:
+      - .env
+    ports:
+      # - ${PORT}:${PORT}
+      - 3000:3000
+    depends_on:
+       - mongo
+          # condition: service_healthy
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo-aula-docker-turma15
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./data/mongodb:/data/db
+    ports:
+      # - ${DB_PORT}:${DB_PORT}
+      - 27017:27017

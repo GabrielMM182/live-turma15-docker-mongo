@@ -1,0 +1,31 @@
+npm i dotenv express nodemon mongoose ts-node typescript @types/express @types/mongoose @types/node
+
+npx tsc --init
+
+tsconfig.json
+{
+	"compilerOptions": {
+		"target": "ES2018",
+		"lib": ["es5", "es6", "ES2018"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"typeRoots": ["./src/@types"],
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"outDir": "./dist",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"strictPropertyInitialization": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"skipLibCheck": true,
+		"types": ["node"]
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"],
+	"ts-node": {
+		"files": true
+	}
+}

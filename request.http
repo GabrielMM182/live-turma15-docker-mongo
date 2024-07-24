@@ -1,0 +1,14 @@
+### Variables 
+@apiurl = http://localhost:3000
+
+GET {{apiurl}}/user HTTP/1.1
+
+###
+
+POST http://localhost:3000/user
+content-type: application/json
+
+{
+    "name": "teste",
+    "email": "emai@gmail.com",
+}
